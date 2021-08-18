@@ -36,7 +36,6 @@ jobs:
           extensions: ${{ matrix.extensions }}
           ini-values: max_input_vars=5000
           coverage: none
-          tools: composer, cs2pr
 
       - name: Initialise moodle-plugin-ci
         run: |
@@ -52,6 +51,11 @@ jobs:
         env:
           DB: ${{ matrix.database }}
           MOODLE_BRANCH: ${{ matrix.moodle-branch }}
+
+      - name: Install PHP_CodeSniffer
+        run: |
+          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+          php phpcs.phar --version
 
       - name: PHP Lint
         if: ${{ always() }}
@@ -101,5 +105,5 @@ jobs:
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
-#       - name: Detect coding standard violations
-#         run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
+
+
