@@ -20,7 +20,7 @@ class SimpleClass {
     public string $name = "Hi My Name is Ash";
     public int $number = 25;
 
-    // method declaration
+    // method declarationg
     public function displayvar(): void {
 
         for ($count = 0; $count <= 10; $count++) {
