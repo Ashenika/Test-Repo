@@ -98,4 +98,7 @@ jobs:
         if: ${{ always() }}
         run: moodle-plugin-ci behat --profile chrome
 
+      - name: Show PHPCS results in PR
+        run: cs2pr ./phpcs-report.xml
+
 
