@@ -36,7 +36,7 @@ jobs:
           extensions: ${{ matrix.extensions }}
           ini-values: max_input_vars=5000
           coverage: none
-          tools: cs2pr
+          tools: composer, cs2pr
 
       - name: Initialise moodle-plugin-ci
         run: |
@@ -52,6 +52,23 @@ jobs:
         env:
           DB: ${{ matrix.database }}
           MOODLE_BRANCH: ${{ matrix.moodle-branch }}
+
+      # NEW CODE composer, cspr added above
+      - name: Install PHP_CodeSniffer
+        run: |
+          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+          php phpcs.phar --version
+
+      - name: Set Moodle CS
+        with:
+          repository: moodlehq/moodle-local_codechecker
+          ref: v3.0.2
+          path: ./.github/actions/moodle-local_codechecker
+
+      - uses: tinovyatkin/action-php-codesniffer@v1
+        with:
+          files: "**.php" # you may customize glob as needed
+          phpcs_path: php phpcs.phar
 
       - name: PHP Lint
         if: ${{ always() }}
@@ -98,11 +115,6 @@ jobs:
       - name: Behat features
         if: ${{ always() }}
         run: moodle-plugin-ci behat --profile chrome
-
-      - name: Install PHP_CodeSniffer
-        run: |
-          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
-          php phpcs.phar --version
 
       - name: Check PHP code style
         continue-on-error: true
