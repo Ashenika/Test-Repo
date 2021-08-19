@@ -55,7 +55,7 @@ jobs:
 
       - name: PHP Lint
         if: ${{ always() }}
-        run: moodle-plugin-ci phplint
+        run: moodle-plugin-ci phplint --output-format=checkstyle | cs2pr
 
       - name: PHP Copy/Paste Detector
         continue-on-error: true # This step will show errors but will not fail
@@ -99,11 +99,6 @@ jobs:
         if: ${{ always() }}
         run: moodle-plugin-ci behat --profile chrome
 
-      - name: Install dependencies with composer
-        run: composer install --no-interaction --no-progress --no-suggest
-
-      - name: Run friendsofphp/php-cs-fixer
-        run: vendor/bin/php-cs-fixer fix --config=.php_cs --diff --diff-format=udiff --verbose
-
-
+      - name: Show PHPCS results in PR
+        run: cs2pr ./phpcs-report.xml
 
