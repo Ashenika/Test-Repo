@@ -60,6 +60,7 @@ jobs:
           php phpcs.phar --version
 
       - name: Set Moodle CS
+        uses: actions/checkout@v2
         with:
           repository: moodlehq/moodle-local_codechecker
           ref: v3.0.2
