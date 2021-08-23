@@ -39,6 +39,12 @@ jobs:
           coverage: none
           tools: composer, cs2pr
 
+      - name: Checking with CodeSniffer
+        uses: tinovyatkin/action-php-codesniffer@v1
+        with:
+          files: "**.php" # you may customize glob as needed
+          phpcs_path: php phpcs.phar
+
       - name: Initialise moodle-plugin-ci
         run: |
           composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^3
@@ -81,12 +87,6 @@ jobs:
       - name: Moodle PHPDoc Checker
         if: ${{ always() }}
         run: moodle-plugin-ci phpdoc
-
-      - name: Checking with CodeSniffer
-        uses: tinovyatkin/action-php-codesniffer@v1
-        with:
-          files: "**.php" # you may customize glob as needed
-          phpcs_path: php phpcs.phar
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
