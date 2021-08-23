@@ -22,6 +22,7 @@ jobs:
       - name: Install PHP_CodeSniffer
         run: |
           curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar
           php phpcs.phar --version
           
       - name: Set Moodle CS
@@ -31,12 +32,13 @@ jobs:
           ref: v3.0.2
           path: ./.github/actions/moodle-local_codechecker
 
-      - uses: tinovyatkin/action-php-codesniffer@v1
+      - name: Checking with CodeSniffer
+        uses: tinovyatkin/action-php-codesniffer@v1
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
-#       - name: Detect coding standard violations
-#         run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
+      # - name: Detect coding standard violations
+      #   run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
