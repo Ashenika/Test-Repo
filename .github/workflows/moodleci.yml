@@ -36,6 +36,7 @@ jobs:
           extensions: ${{ matrix.extensions }}
           ini-values: max_input_vars=5000
           coverage: none
+          tools: composer, cs2pr
 
       - name: Initialise moodle-plugin-ci
         run: |
@@ -70,20 +71,7 @@ jobs:
         if: ${{ always() }}
         run: moodle-plugin-ci codechecker --max-warnings 0
 
-      - name: Set Moodle CS
-        uses: actions/checkout@v2
-        with:
-          repository: moodlehq/moodle-local_codechecker
-          ref: v3.0.2
-          path: ./.github/actions/moodle-local_codechecker
-
-      - name: Checking with CodeSniffer
-        uses: tinovyatkin/action-php-codesniffer@v1
-        with:
-          files: "**.php" # you may customize glob as needed
-          phpcs_path: php phpcs.phar
-
-      - name: Show PHPCS results in PR
+      - name: Show PHPCS results in pull request
         if: ${{ always() }}
         run: cs2pr ./phpcs-report.xml
 
