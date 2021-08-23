@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Version file for Facilitation Dashboard
  *
@@ -15,21 +16,26 @@
  * This plugin support Moodle 3.8 and upwards
  */
 
+
 /**
  * Class SimpleClass
  */
-class SimpleClass {
+class SimpleClass 
+{
 
     // Property declaration.
+    
     /**
      * @var string
      */
     public $name = "Hi My Name is Ash";
 
+
     /**
      * @var int
      */
     public $number = 25;
+
 
     /**
      * Method displayvar().
@@ -40,6 +46,7 @@ class SimpleClass {
             echo $this->name;
         }
     }
+
 
     /**
      * Method displaynum().
