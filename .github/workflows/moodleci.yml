@@ -70,6 +70,13 @@ jobs:
         if: ${{ always() }}
         run: moodle-plugin-ci codechecker --max-warnings 0
 
+      - name: Set Moodle CS
+        uses: actions/checkout@v2
+        with:
+          repository: moodlehq/moodle-local_codechecker
+          ref: v3.0.2
+          path: ./.github/actions/moodle-local_codechecker
+
       - name: Checking with CodeSniffer
         uses: tinovyatkin/action-php-codesniffer@v1
         with:
@@ -77,6 +84,7 @@ jobs:
           phpcs_path: php phpcs.phar
 
       - name: Show PHPCS results in PR
+        if: ${{ always() }}
         run: cs2pr ./phpcs-report.xml
 
       - name: Moodle PHPDoc Checker
