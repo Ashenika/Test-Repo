@@ -31,6 +31,10 @@
  * This plugin support Moodle 3.8 and upwards
  */
 
+/**
+ * Language 
+ */
+
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Test local';
