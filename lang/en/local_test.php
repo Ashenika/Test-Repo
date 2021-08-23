@@ -15,12 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Language file.
+ * Language File
  *
- * @package    core_files
- * @copyright  2018 Frédéric Massart
- * @author     Frédéric Massart <fred@branchup.tech>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_test
+ * @copyright 2021 Wiley Educational Services
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * $plugin->version
+ * The current version number of the plugin. The format is partially date
+ * based with the form YYYYMMDDXX where XX is an incremental counter for
+ * the given year (YYYY), month (MM) and date (DD) of the plugin version's release.
+ *
+ * $plugin->requires
+ * This plugin support Moodle 3.8 and upwards
  */
 
 defined('MOODLE_INTERNAL') || die();
