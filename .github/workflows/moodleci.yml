@@ -71,10 +71,6 @@ jobs:
         if: ${{ always() }}
         run: moodle-plugin-ci codechecker --max-warnings 0
 
-      - name: Show PHPCS results in pull request
-        if: ${{ always() }}
-        run: cs2pr ./phpcs-report.xml
-
       - name: Moodle PHPDoc Checker
         if: ${{ always() }}
         run: moodle-plugin-ci phpdoc
@@ -86,6 +82,10 @@ jobs:
       - name: Check upgrade savepoints
         if: ${{ always() }}
         run: moodle-plugin-ci savepoints
+
+      - name: Show PHPCS results in pull request
+        if: ${{ always() }}
+        run: cs2pr ./phpcs-report.xml
 
       - name: Mustache Lint
         if: ${{ always() }}
