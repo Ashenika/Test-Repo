@@ -3,7 +3,7 @@
 /**
  * Version file for Facilitation Dashboard
  *
- * @package   local_test
+ * @package   Local_test
  * @copyright 2021 Wiley Educational Services
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -16,12 +16,8 @@
  * This plugin support Moodle 3.8 and upwards
  */
 
-namespace CodingStandard;
-
 class SimpleClass
 {
-
-    // Property declaration.
 
     /**
      * @var string
