@@ -31,7 +31,8 @@ jobs:
           ref: v3.0.2
           path: ./.github/actions/moodle-local_codechecker
 
-      - uses: tinovyatkin/action-php-codesniffer@v1
+      - name: Checking with CodeSniffer
+        uses: tinovyatkin/action-php-codesniffer@v1
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
