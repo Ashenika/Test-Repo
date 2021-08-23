@@ -87,6 +87,6 @@
     </rule>
 
     <!-- Let's add the complete PHPCompatibility standard -->
-    <rule ref="PHPCompatibility" />
+    <!-- <rule ref="PHPCompatibility" /> -->
 
 </ruleset>
