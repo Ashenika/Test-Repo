@@ -22,6 +22,7 @@ jobs:
       - name: Install PHP_CodeSniffer
         run: |
           curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar
           php phpcs.phar --version
           
       - name: Set Moodle CS
@@ -37,16 +38,7 @@ jobs:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
 
-      - name: Detect coding standard violations
-        run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
-
-      - name: Run PHP-CS-Fixer Style
-        run: ./vendor/bin/php-cs-fixer fix
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Apply PHP-CS-Fixer changes  
-
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
-
+      # - name: Detect coding standard violations
+      #   run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
