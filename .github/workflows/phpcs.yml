@@ -37,6 +37,9 @@ jobs:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
 
+      - name: Detect coding standard violations
+        run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
+
       - name: Run PHP-CS-Fixer Style
         run: ./vendor/bin/php-cs-fixer fix
 
@@ -46,5 +49,4 @@ jobs:
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
-#       - name: Detect coding standard violations
-#         run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
+
