@@ -17,7 +17,6 @@
  * 
  */
 
-
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Test local';
