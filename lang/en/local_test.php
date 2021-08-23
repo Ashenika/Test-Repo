@@ -15,12 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Language File
+ * Version file for Facilitation Dashboard
  *
- * @package   local_test
- * @copyright 2021 Wiley Educational Services
- * @author    Ashenika Perera <ash@wiley.com>
- * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    local_test
+ * @copyright  2021 Wiley Educational Services
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * $plugin->version
  * The current version number of the plugin. The format is partially date
