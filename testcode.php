@@ -35,15 +35,8 @@
  */
 class SimpleClass {
 
-    // Property declaration.
-    /**
-     * @var string
-     */
+    // roperty declaration
     public $name = "Hi My Name is Ash";
-
-    /**
-     * @var int
-     */
     public $number = 25;
 
     /**
