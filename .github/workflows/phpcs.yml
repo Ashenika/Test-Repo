@@ -38,5 +38,5 @@ jobs:
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
-#       - name: Detect coding standard violations
-#         run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
+      - name: Detect coding standard violations
+        run: php phpcs.phar ./ -q --standard=PSR12 --report=checkstyle | cs2pr --graceful-warnings
