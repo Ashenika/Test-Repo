@@ -39,12 +39,6 @@ jobs:
           coverage: none
           tools: composer, cs2pr
 
-      - name: Checking with CodeSniffer
-        uses: tinovyatkin/action-php-codesniffer@v1
-        with:
-          files: "**.php" # you may customize glob as needed
-          phpcs_path: php phpcs.phar
-
       - name: Initialise moodle-plugin-ci
         run: |
           composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^3
@@ -65,6 +59,12 @@ jobs:
           curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
           curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar
           php phpcs.phar --version
+
+      - name: Checking with CodeSniffer
+        uses: tinovyatkin/action-php-codesniffer@v1
+        with:
+          files: "**.php" # you may customize glob as needed
+          phpcs_path: php phpcs.phar
 
       - name: PHP Lint
         if: ${{ always() }}
