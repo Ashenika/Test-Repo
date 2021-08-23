@@ -19,6 +19,7 @@
  *
  * @package   local_test
  * @copyright 2021 Wiley Educational Services
+ * @author     Ashenika Perera <ash@wiley.com>
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * $plugin->version
