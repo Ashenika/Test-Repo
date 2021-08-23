@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,12 +12,12 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Version file for Facilitation Dashboard
  *
- * @package    local_facilitation_dashboard
+ * @package    local_test
  * @copyright  2021 Wiley Educational Services
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *

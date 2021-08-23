@@ -17,7 +17,7 @@
 /**
  * Version file for Facilitation Dashboard
  *
- * @package    local_facilitation_dashboard
+ * @package    local_test
  * @copyright  2021 Wiley Educational Services
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
