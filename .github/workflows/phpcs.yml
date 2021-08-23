@@ -32,7 +32,7 @@ jobs:
           path: ./.github/actions/moodle-local_codechecker
 
       - name: Checking with CodeSniffer
-        uses: tinovyatkin/action-php-codesniffer@v1
+        uses: thenabeel/action-phpcs@v8
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
