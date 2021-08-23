@@ -60,12 +60,22 @@ jobs:
           curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar
           php phpcs.phar --version
 
+      - name: Set Moodle CS
+        uses: actions/checkout@v2
+        with:
+          repository: moodlehq/moodle-local_codechecker
+          ref: v3.0.2
+          path: ./.github/actions/moodle-local_codechecker
+
       - name: Checking with CodeSniffer
         uses: tinovyatkin/action-php-codesniffer@v1
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
 
+      - name: Show PHPCS results in PR
+        run: cs2pr ./phpcs-report.xml
+        
       - name: PHP Lint
         if: ${{ always() }}
         run: moodle-plugin-ci phplint
@@ -87,9 +97,6 @@ jobs:
       - name: Moodle PHPDoc Checker
         if: ${{ always() }}
         run: moodle-plugin-ci phpdoc
-
-      - name: Show PHPCS results in PR
-        run: cs2pr ./phpcs-report.xml
 
       - name: Validating
         if: ${{ always() }}
