@@ -16,20 +16,15 @@
  * This plugin support Moodle 3.8 and upwards
  */
 
-
-/**
- * Class SimpleClass
- */
-class SimpleClass 
+class SimpleClass
 {
 
     // Property declaration.
-    
+
     /**
      * @var string
      */
     public $name = "Hi My Name is Ash";
-
 
     /**
      * @var int
@@ -40,7 +35,8 @@ class SimpleClass
     /**
      * Method displayvar().
      */
-    public function displayvar() {
+    public function displayvar()
+    {
 
         for ($count = 0; $count <= 10; $count++) {
             echo $this->name;
@@ -51,7 +47,8 @@ class SimpleClass
     /**
      * Method displaynum().
      */
-    public function displaynum() {
+    public function displaynum()
+    {
         echo "This is a Number" . $this->number;
     }
 }
