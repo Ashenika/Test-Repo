@@ -3,7 +3,7 @@ name: Moodle Plugin CI
 on: [pull_request]
 
 jobs:
-  testvfvfv:
+  testrererere:
     runs-on: ubuntu-18.04
 
     services:
@@ -97,8 +97,3 @@ jobs:
       - name: Behat features
         if: ${{ always() }}
         run: moodle-plugin-ci behat --profile chrome
-
-
-
-
-
