@@ -37,6 +37,7 @@ jobs:
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
+          standard: ././Moodle.xml
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
