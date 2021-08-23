@@ -23,6 +23,7 @@ jobs:
         run: |
           curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
           php phpcs.phar --version
+        standard: phpcs.xml
           
       - name: Set Moodle CS
         uses: actions/checkout@v2
@@ -32,11 +33,10 @@ jobs:
           path: ./.github/actions/moodle-local_codechecker
 
       - name: Checking with CodeSniffer
-        uses: thenabeel/action-phpcs@v8
+        uses: tinovyatkin/action-php-codesniffer@v1
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
-          standard: phpcs.xml
 
 
       - name: Show PHPCS results in PR
