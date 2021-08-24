@@ -36,7 +36,7 @@ jobs:
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
-          standard: '_tests_/phpcs.xml'
+          standard: __tests__/phpcs.xml
 
 
       - name: Show PHPCS results in PR
