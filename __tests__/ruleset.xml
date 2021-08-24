@@ -82,9 +82,9 @@
     <rule ref="Zend.Files.ClosingTag"/>
 
     <!-- Disable this exact error unless it's approved -->
-    <rule ref="moodle.Commenting.InlineComment.SpacingAfter">
+    <!-- <rule ref="moodle.Commenting.InlineComment.SpacingAfter">
         <severity>0</severity>
-    </rule>
+    </rule> -->
 
     <!-- Let's add the complete PHPCompatibility standard -->
     <rule ref="PHPCompatibility" />
