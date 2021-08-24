@@ -36,7 +36,7 @@ jobs:
         with:
           files: "**.php" # you may customize glob as needed
           phpcs_path: php phpcs.phar
-          standard: __tests__/moodle.xml
+          standard: __tests__/ruleset.xml
 
 
       - name: Show PHPCS results in PR
