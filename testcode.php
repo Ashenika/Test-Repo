@@ -16,6 +16,8 @@
  * This plugin support Moodle 3.8 and upwards
  */
 
+namespace CodingStandard;
+
 class SimpleClass
 {
 
