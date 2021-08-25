@@ -25,12 +25,12 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: Ashenika/actions.git@1
+        uses: Ashenika/actions@1
         with:
           path: plugin
 
       - name: Setup PHP ${{ matrix.php }}
-        uses: Ashenika/setup.git@1
+        uses: Ashenika/setup@1
         with:
           php-version: ${{ matrix.php }}
           extensions: ${{ matrix.extensions }}
